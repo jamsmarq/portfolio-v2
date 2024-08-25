@@ -1,8 +1,29 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Space_Grotesk } from "next/font/google";
+import localFont from 'next/font/local';
+
+import "./globals.css";
+import Header from "@/includes/Header";
+
+const satoshi = localFont({
+  src: "./fonts/Satoshi-Normal.woff2",
+  display: "swap",
+  variable: "--font-satoshi",
+});
+
+const satoshi_italic = localFont({
+  src: "./fonts/Satoshi-Italic.woff2",
+  display: "swap",
+  variable: "--font-satoshi-italic",
+});
+
+const space_grotesk = Space_Grotesk({ 
+  weight: ["400", "700"],
+  subsets: ["latin"], 
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${satoshi.className}`}>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
