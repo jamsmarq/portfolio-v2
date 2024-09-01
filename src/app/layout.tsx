@@ -7,20 +7,30 @@ import "./globals.css";
 import Header from "@/includes/Header";
 
 const satoshi = localFont({
-  src: "./fonts/Satoshi-Normal.woff2",
-  display: "swap",
+  src: [
+    {
+      path: "./fonts/Satoshi-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Satoshi-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    }
+  ],
   variable: "--font-satoshi",
 });
 
-const satoshi_italic = localFont({
-  src: "./fonts/Satoshi-Italic.woff2",
-  display: "swap",
-  variable: "--font-satoshi-italic",
-});
+// const satoshi_italic = localFont({
+//   src: "./fonts/Satoshi-Italic.woff2",
+//   display: "swap",
+//   variable: "--font-satoshi-italic",
+// });
 
-const space_grotesk = Space_Grotesk({ 
+export const space_grotesk = Space_Grotesk({
   weight: ["400", "700"],
-  subsets: ["latin"], 
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-space-grotesk",
 });
@@ -36,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${satoshi.className}`}>
-      <body>
+    <html lang="en">
+      <body className={`${satoshi.className}`}>
         <Header />
         {children}
       </body>

@@ -5,6 +5,8 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/includes/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -14,9 +16,9 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        "primary": ["var(--font-satoshi)", "sans-serif"],
-        "primary-italic": ["var(--font-satoshi-italic)", "sans-serif"],
-        "secondary": ["var(--font-space-grotesk)", "sans-serif"],
+        // "primary": ["var(--font-satoshi)"],
+        // "primary-italic": ["var(--font-satoshi-italic)"],
+        secondary: ["var(--font-space-grotesk)"],
       }
     },
   },
